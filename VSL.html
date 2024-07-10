@@ -254,28 +254,30 @@
     </style>
 
 <script>
-    function getEmailFromURL() {
-        const params = new URLSearchParams(window.location.search);
-        return params.get('invitee_email');
-    }
+    // function RedirectCheck()
+    // {
+    //     const params = new URLSearchParams(window.location.search);
+    //     temp_email = params.get('invitee_email');
+    //     if(temp_email)
+    //         window.location.href = `https://info.msocialverse.com/OTH-VSL.html?wemail=${temp_email}`;
+    // }
 
-    function GotoForm()
+    // RedirectCheck();
+
+
+    // function getEmailFromURL() {
+    //     const params = new URLSearchParams(window.location.search);
+    //     return params.get('wemail');
+    // }
+
+    function GotoThankYouVideo()
     {
-        var email = getCookie("email");
-        if(!email)
-        {
-            email = getEmailFromURL();
-        }
-        if (watchedPercentage > 75)
-        {
-            window.location.href = `https://info.msocialverse.com/Form.html?invitee_email=${email}`;
-        }
+        const params = new URLSearchParams(window.location.search);
+        temp_email = params.get('invitee_email');
+        if(temp_email)
+            window.location.href = `https://join.msocialverse.com/ThankYou.html?invitee_email=${temp_email}`;
         else
-        {
-            const message = document.querySelector('.hint-line');
-            message.style.display = 'block';
-        }
-
+            window.location.href = "https://join.msocialverse.com/ThankYou.html";
     }
 
 </script>
@@ -301,21 +303,14 @@
 
         <div class="tag-line section">Call Booked &#128077; <span style="background: linear-gradient(to right, #e04d13, #d48a28); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></span></div>
         
-        <div class="sub-tag-line section">Let's Understand your <b>Business</b> better.</div>
+        <div class="sub-tag-line section">Get to know how the Platform works</div>
 
 
         <div class="video-wrapper section">
-            <script src="https://fast.wistia.com/embed/medias/bq72xaor9b.jsonp" async></script>
-            <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-            <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-                <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-                    <div class="wistia_embed wistia_async_bq72xaor9b seo=true videoFoam=true" style="height:100%;position:relative;width:100%">
-                        <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
-                            <img src="https://fast.wistia.com/embed/medias/bq72xaor9b/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" />
-            </div></div></div></div>
+            <script src="https://fast.wistia.com/embed/medias/lv137c8vl2.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_lv137c8vl2 seo=true videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/lv137c8vl2/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
         </div>
         <div class="button-wrapper section">
-            <button onclick="GotoForm()">Continue</button>
+            <button onclick="GotoThankYouVideo()">Continue</button>
         </div>
         <div class="hint-line section">Please watch the full video to continue</div>
         
@@ -324,81 +319,81 @@
 
     
     <script>
-        var watchedPercentage = 0;
-        var offerRedeemed = false;
-        function trackVideoProgress(video) {
-            const parts = 30;
-            const updateFrequency = 1; // Check every second
-            const cookieName = 'video2Progress';
+        // var watchedPercentage = 0;
+        // var offerRedeemed = false;
+        // function trackVideoProgress(video) {
+        //     const parts = 30;
+        //     const updateFrequency = 1; // Check every second
+        //     const cookieName = 'video2Progress';
             
-            // Initialize or retrieve the watched parts from the cookie
-            let watchedParts = getCookie(cookieName) || '0'.repeat(parts);
-            watchedPercentage = calculateWatchedPercentage(watchedParts);
-            console.log(watchedPercentage);
+        //     // Initialize or retrieve the watched parts from the cookie
+        //     let watchedParts = getCookie(cookieName) || '0'.repeat(parts);
+        //     watchedPercentage = calculateWatchedPercentage(watchedParts);
+        //     console.log(watchedPercentage);
 
-            video.addEventListener('timeupdate', function() {
-                const currentTime = video.currentTime;
-                const duration = video.duration;
-                const partLength = duration / parts;
-                const partIndex = Math.floor(currentTime / partLength);
+        //     video.addEventListener('timeupdate', function() {
+        //         const currentTime = video.currentTime;
+        //         const duration = video.duration;
+        //         const partLength = duration / parts;
+        //         const partIndex = Math.floor(currentTime / partLength);
                 
-                if (watchedParts[partIndex] === '0') {
-                    watchedParts = setCharAt(watchedParts, partIndex, '1');
-                    setCookie(cookieName, watchedParts, 365); // Store the updated cookie for 1 year
-                    watchedPercentage = calculateWatchedPercentage(watchedParts);
-                    console.log(watchedPercentage);
-                }
+        //         if (watchedParts[partIndex] === '0') {
+        //             watchedParts = setCharAt(watchedParts, partIndex, '1');
+        //             setCookie(cookieName, watchedParts, 365); // Store the updated cookie for 1 year
+        //             watchedPercentage = calculateWatchedPercentage(watchedParts);
+        //             console.log(watchedPercentage);
+        //         }
 
-            });
+        //     });
 
-            video.addEventListener('ended', function() {
-                console.log('Video ended! You watched ' + calculateWatchedPercentage(watchedParts) + '% of the video.');
-            });
+        //     video.addEventListener('ended', function() {
+        //         console.log('Video ended! You watched ' + calculateWatchedPercentage(watchedParts) + '% of the video.');
+        //     });
 
-            function calculateWatchedPercentage(partsString) {
-                const watchedCount = partsString.split('').filter(char => char === '1').length;
-                return (watchedCount / parts) * 100;
-            }
+        //     function calculateWatchedPercentage(partsString) {
+        //         const watchedCount = partsString.split('').filter(char => char === '1').length;
+        //         return (watchedCount / parts) * 100;
+        //     }
 
-            function setCharAt(str, index, chr) {
-                if (index > str.length - 1) return str;
-                return str.substring(0, index) + chr + str.substring(index + 1);
-            }
+        //     function setCharAt(str, index, chr) {
+        //         if (index > str.length - 1) return str;
+        //         return str.substring(0, index) + chr + str.substring(index + 1);
+        //     }
 
            
-        }
+        // }
 
-        function getCookie(name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        }
+        // function getCookie(name) {
+        //     const value = `; ${document.cookie}`;
+        //     const parts = value.split(`; ${name}=`);
+        //     if (parts.length === 2) return parts.pop().split(';').shift();
+        // }
 
-        function setCookie(name, value, days) {
-            const d = new Date();
-            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-            const expires = `expires=${d.toUTCString()}`;
-            document.cookie = `${name}=${value}; ${expires}; path=/`;
-        }
+        // function setCookie(name, value, days) {
+        //     const d = new Date();
+        //     d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        //     const expires = `expires=${d.toUTCString()}`;
+        //     document.cookie = `${name}=${value}; ${expires}; path=/`;
+        // }
 
-        // Function to continuously check for the video element
-        function checkForVideo() {
-            const video = document.querySelector('video');
-            if (video) {
-                trackVideoProgress(video);
-                var tmpEmail = getEmailFromURL();
-                if(tmpEmail)
-                {
-                    setCookie("email",tmpEmail,365);
-                }
+        // // Function to continuously check for the video element
+        // function checkForVideo() {
+        //     const video = document.querySelector('video');
+        //     if (video) {
+        //         trackVideoProgress(video);
+        //         var tmpEmail = getEmailFromURL();
+        //         if(tmpEmail)
+        //         {
+        //             setCookie("email",tmpEmail,365);
+        //         }
 
-            } else {
-                setTimeout(checkForVideo, 500); // Check again after 500ms
-            }
-        }
+        //     } else {
+        //         setTimeout(checkForVideo, 500); // Check again after 500ms
+        //     }
+        // }
 
-        // Start checking for the video element
-        checkForVideo();
+        // // Start checking for the video element
+        // checkForVideo();
 
     </script>
 </body>

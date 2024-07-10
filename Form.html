@@ -328,6 +328,11 @@
             {
                 email = getEmailFromURL();
             }
+            if(!email)
+            {
+                email = document.querySelector('.E1').value;
+            }
+
             // Collect all contents from textareas
             var formData = {
                 email: email,
@@ -341,7 +346,7 @@
             };
 
             // Send data to Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbxgudzhKEf8bNmRhan-H1ZAkr7arxKn1fgEoo4_NGnDoTbTGAxyEKueV1OCIPc6Uu3H1g/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbyEgsud9pf5-pD5oDpYYj8iTP1Os1YRqCU4cpEc5eJCtnGD6aDjTucYlcJ9-l9NnjikFg/exec', {
                 method: 'POST',
                 // mode: "no-cors", 
                 // cache: "no-cache",
@@ -354,7 +359,7 @@
             .then(response => {
                 if (response.ok) {
                     // If data is successfully submitted, redirect
-                    window.location.href = 'https://info.msocialverse.com/ThankYou.html';
+                    window.location.href = 'https://join.msocialverse.com/FormSuccess.html';
                 } else {
                     // Handle errors
                     console.error('Failed to submit form data');
@@ -422,6 +427,10 @@
         <div class="sub-tag-line section"  style="padding-bottom: 50px; padding-top: 20px; font-weight: 600;">Help us understand your business better before our call.</div>
 
         <div class="questions section">
+            <div class="section optional">
+                <div class="question-label"><b>Email:</b> Helps in identifying your Answers</div>
+                <input type="email" class="question-input E1" placeholder="name@domain.com" style="min-height: 50px;"/>
+            </div>
             <div class="section">
                 <div class="question-label"><b>Booking Reason:</b> What prompted you to book this meeting with mSocial? (Briefly explain)</div>
                 <textarea class="question-input Q1" placeholder="Type you answer here."></textarea>
@@ -459,5 +468,17 @@
         
         
     </div>
+    <script>
+        function EmailCheck()
+        { 
+            const params = new URLSearchParams(window.location.search);
+            temp_email = params.get('invitee_email');
+            if(temp_email)
+            {
+                document.querySelector('.optional').style.display = "none";
+            }
+        }
+        EmailCheck();
+    </script>
 </body>
 </html>

@@ -261,85 +261,115 @@
         }
     </style>
     <script>
-        function getEmailFromURL() {
-            const params = new URLSearchParams(window.location.search);
-            return params.get('wemail');
-        }
+        // function getEmailFromURL() {
+        //     const params = new URLSearchParams(window.location.search);
+        //     return params.get('wemail');
+        // }
 
         
-        function RecordVisitorLandedOnPage() {
-            const email = getEmailFromURL();
-            if (!email) {
-                console.log('Email parameter is missing in the URL.');
-                return;
-            }
+        // function RecordVisitorLandedOnPage() {
+        //     const email = getEmailFromURL();
+        //     if (!email) {
+        //         console.log('Email parameter is missing in the URL.');
+        //         return;
+        //     }
 
-            const url = `https://462dg3vi3e42y7tudtwmtdh5nu0rnpus.lambda-url.ap-south-1.on.aws/?wemail=${email}&categ=8494`;
+        //     const url = `https://7defxhh6t3vjashcxhfrxuamem0gnmnf.lambda-url.ap-south-1.on.aws/?wemail=${email}&categ=9783`;
 
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text(); // Expecting plain text response
-                })
-                .then(data => {
-                    if (data === 'success') {
-                       console.log("Visitor recorded");
-                    } else {
-                        throw new Error('Unexpected response data');
-                    }
-                })
-                .catch(error => {
-                    console.log('An error occurred. Please try again later.');
-                });
-        }
-        RecordVisitorLandedOnPage();
+        //     fetch(url)
+        //         .then(response => {
+        //             if (!response.ok) {
+        //                 throw new Error('Network response was not ok');
+        //             }
+        //             return response.text(); // Expecting plain text response
+        //         })
+        //         .then(data => {
+        //             if (data === 'success') {
+        //                console.log("Visitor recorded");
+        //             } else {
+        //                 throw new Error('Unexpected response data');
+        //             }
+        //         })
+        //         .catch(error => {
+        //             console.log('An error occurred. Please try again later.');
+        //         });
+        // }
+        // RecordVisitorLandedOnPage();
 
-        function redeemOffer() {
-            const email = getEmailFromURL();
-            if (!email) {
-                console.log('Email parameter is missing in the URL.');
-                return;
-            }
+        // function redeemOffer() {
+        //     const email = getEmailFromURL();
+        //     if (!email) {
+        //         console.log('Email parameter is missing in the URL.');
+        //         return;
+        //     }
 
 
-            const url = `https://462dg3vi3e42y7tudtwmtdh5nu0rnpus.lambda-url.ap-south-1.on.aws/?wemail=${email}&categ=8497`;
+        //     const url = `https://7defxhh6t3vjashcxhfrxuamem0gnmnf.lambda-url.ap-south-1.on.aws/?wemail=${email}&categ=8497`;
 
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                        offerRedeemed = false;
-                    }
-                    return response.text(); // Expecting plain text response
-                })
-                .then(data => {
-                    if (data === 'success') {
-                        offerRedeemed = true;
-                        console.log("Offer Received");
-                    } else {
-                        offerRedeemed = false;
-                        throw new Error('Unexpected response data');
-                    }
-                })
-                .catch(error => {
-                    alert('An error occurred. Please try again later.');
-                    offerRedeemed = false;
-                });
-        }
+        //     fetch(url)
+        //         .then(response => {
+        //             if (!response.ok) {
+        //                 throw new Error('Network response was not ok');
+        //                 offerRedeemed = false;
+        //             }
+        //             return response.text(); // Expecting plain text response
+        //         })
+        //         .then(data => {
+        //             if (data === 'success') {
+        //                 offerRedeemed = true;
+        //                 console.log("Offer Received");
+        //             } else {
+        //                 offerRedeemed = false;
+        //                 throw new Error('Unexpected response data');
+        //             }
+        //         })
+        //         .catch(error => {
+        //             alert('An error occurred. Please try again later.');
+        //             offerRedeemed = false;
+        //         });
+        // }
+
+        // function TriedBookingCall() {
+        //     const email = getEmailFromURL();
+        //     if (!email) {
+        //         console.log('Email parameter is missing in the URL.');
+        //         return;
+        //     }
+
+        //     const url = `https://7defxhh6t3vjashcxhfrxuamem0gnmnf.lambda-url.ap-south-1.on.aws/?wemail=${email}&categ=9788`;
+
+        //     fetch(url)
+        //         .then(response => {
+        //             if (!response.ok) {
+        //                 throw new Error('Network response was not ok');
+        //             }
+        //             return response.text(); // Expecting plain text response
+        //         })
+        //         .then(data => {
+        //             if (data === 'success') {
+        //                console.log("CTA recorded");
+        //             } else {
+        //                 throw new Error('Unexpected response data');
+        //             }
+        //         })
+        //         .catch(error => {
+        //             console.log('An error occurred. Please try again later.');
+        //         });
+        // }
 
         function DirectToBookCall()
         {
-            if (watchedPercentage > 75)
-            {
-                window.location.href = 'https://calendly.com/msocialverse/call-with-msocial';
-            }
-            else
-            {
-                const message = document.querySelector('.hint-line');
-                message.style.display = 'block';
-            }
+            // TriedBookingCall();
+            window.location.href = 'https://calendly.com/msocialverse/call-with-msocial-clone';
+            // if (watchedPercentage > 75)
+            // {
+            //     window.location.href = 'https://calendly.com/msocialverse/call-with-msocial-lp';
+            // }
+            // else
+            // {
+            //     const message = document.querySelector('.hint-line');
+            //     message.style.display = 'block';
+            // }
 
         }
 
@@ -368,17 +398,10 @@
         
         <div class="tag-line section">Reach <span style="background: linear-gradient(to right, #e04d13, #d48a28); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">10 Million</span> Gamers</div>
         
-        <div class="sub-tag-line section">Boost Ad Returns <b>by 200% in 6 Months</b></div>
+        <!-- <div class="sub-tag-line section">Boost Ad Returns <b>by 200% in 6 Months</b></div> -->
         
         <div class="video-wrapper section">
-            <script src="https://fast.wistia.com/embed/medias/xtztxhf6na.jsonp" async></script>
-            <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-            <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-                <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-                    <div class="wistia_embed wistia_async_xtztxhf6na seo=true videoFoam=true" style="height:100%;position:relative;width:100%">
-                        <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
-                            <img src="https://fast.wistia.com/embed/medias/xtztxhf6na/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" />
-            </div></div></div></div>
+            <script src="https://fast.wistia.com/embed/medias/xwuvg303kt.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_xwuvg303kt seo=true videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/xwuvg303kt/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
         </div>
         <div class="button-wrapper section">
             <button onclick="DirectToBookCall()">Book a Call</button>
@@ -389,129 +412,128 @@
     </div>
 
     <script>
-        var watchedPercentage = 0;
-        var offerRedeemed = false;
-        function trackVideoProgress(video) {
-            const parts = 30;
-            const updateFrequency = 1; // Check every second
-            const cookieName = 'videoProgress';
+        // var watchedPercentage = 0;
+        // var offerRedeemed = false;
+        // function trackVideoProgress(video) {
+        //     const parts = 30;
+        //     const updateFrequency = 1; // Check every second
+        //     const cookieName = 'videoProgress';
             
-            // Initialize or retrieve the watched parts from the cookie
-            let watchedParts = getCookie(cookieName) || '0'.repeat(parts);
-            watchedPercentage = calculateWatchedPercentage(watchedParts);
-            console.log(watchedPercentage);
+        //     // Initialize or retrieve the watched parts from the cookie
+        //     let watchedParts = getCookie(cookieName) || '0'.repeat(parts);
+        //     watchedPercentage = calculateWatchedPercentage(watchedParts);
+        //     console.log(watchedPercentage);
 
-            video.addEventListener('timeupdate', function() {
-                const currentTime = video.currentTime;
-                const duration = video.duration;
-                const partLength = duration / parts;
-                const partIndex = Math.floor(currentTime / partLength);
+        //     video.addEventListener('timeupdate', function() {
+        //         const currentTime = video.currentTime;
+        //         const duration = video.duration;
+        //         const partLength = duration / parts;
+        //         const partIndex = Math.floor(currentTime / partLength);
                 
-                if (watchedParts[partIndex] === '0') {
-                    watchedParts = setCharAt(watchedParts, partIndex, '1');
-                    setCookie(cookieName, watchedParts, 365); // Store the updated cookie for 1 year
-                    watchedPercentage = calculateWatchedPercentage(watchedParts);
-                    console.log(watchedPercentage);
-                    if (offerRedeemed == false && watchedPercentage > 75)
-                    {
-                        offerRedeemed = true;
-                        redeemOffer();
-                    }
-                }
+        //         if (watchedParts[partIndex] === '0') {
+        //             watchedParts = setCharAt(watchedParts, partIndex, '1');
+        //             setCookie(cookieName, watchedParts, 365); // Store the updated cookie for 1 year
+        //             watchedPercentage = calculateWatchedPercentage(watchedParts);
+        //             console.log(watchedPercentage);
+        //             if (offerRedeemed == false && watchedPercentage > 75)
+        //             {
+        //                 offerRedeemed = true;
+        //                 // redeemOffer();
+        //             }
+        //         }
 
-            });
+        //     });
 
-            video.addEventListener('ended', function() {
-                console.log('Video ended! You watched ' + calculateWatchedPercentage(watchedParts) + '% of the video.');
-            });
+        //     video.addEventListener('ended', function() {
+        //         console.log('Video ended! You watched ' + calculateWatchedPercentage(watchedParts) + '% of the video.');
+        //     });
 
-            function calculateWatchedPercentage(partsString) {
-                const watchedCount = partsString.split('').filter(char => char === '1').length;
-                return (watchedCount / parts) * 100;
-            }
+        //     function calculateWatchedPercentage(partsString) {
+        //         const watchedCount = partsString.split('').filter(char => char === '1').length;
+        //         return (watchedCount / parts) * 100;
+        //     }
 
-            function setCharAt(str, index, chr) {
-                if (index > str.length - 1) return str;
-                return str.substring(0, index) + chr + str.substring(index + 1);
-            }
+        //     function setCharAt(str, index, chr) {
+        //         if (index > str.length - 1) return str;
+        //         return str.substring(0, index) + chr + str.substring(index + 1);
+        //     }
 
-            function getCookie(name) {
-                const value = `; ${document.cookie}`;
-                const parts = value.split(`; ${name}=`);
-                if (parts.length === 2) return parts.pop().split(';').shift();
-            }
+        //     function getCookie(name) {
+        //         const value = `; ${document.cookie}`;
+        //         const parts = value.split(`; ${name}=`);
+        //         if (parts.length === 2) return parts.pop().split(';').shift();
+        //     }
 
-            function setCookie(name, value, days) {
-                const d = new Date();
-                d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-                const expires = `expires=${d.toUTCString()}`;
-                document.cookie = `${name}=${value}; ${expires}; path=/`;
-            }
-        }
+        //     function setCookie(name, value, days) {
+        //         const d = new Date();
+        //         d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        //         const expires = `expires=${d.toUTCString()}`;
+        //         document.cookie = `${name}=${value}; ${expires}; path=/`;
+        //     }
+        // }
 
-        // Function to continuously check for the video element
-        function checkForVideo() {
-            const video = document.querySelector('video');
-            if (video) {
-                trackVideoProgress(video);
-            } else {
-                setTimeout(checkForVideo, 500); // Check again after 500ms
-            }
-        }
-        // Start checking for the video element
-        checkForVideo();
+        // // Function to continuously check for the video element
+        // function checkForVideo() {
+        //     const video = document.querySelector('video');
+        //     if (video) {
+        //         trackVideoProgress(video);
+        //     } else {
+        //         setTimeout(checkForVideo, 500); // Check again after 500ms
+        //     }
+        // }
+        // // Start checking for the video element
+        // checkForVideo();
         
-        document.body.addEventListener('click', function(event) {
-            // Check if the target is the button or the span inside the button
-            let targetElement = event.target;
+        // document.body.addEventListener('click', function(event) {
+        //     // Check if the target is the button or the span inside the button
+        //     let targetElement = event.target;
 
-            // If the target is the span, adjust the targetElement to be the parent button
-            if (targetElement.tagName === 'SPAN' && targetElement.parentElement.classList.contains('w-vulcan-v2-button')) {
-                targetElement = targetElement.parentElement;
-            }
+        //     // If the target is the span, adjust the targetElement to be the parent button
+        //     if (targetElement.tagName === 'SPAN' && targetElement.parentElement.classList.contains('w-vulcan-v2-button')) {
+        //         targetElement = targetElement.parentElement;
+        //     }
 
-            // Now check if the targetElement is the button
-            if (targetElement.classList.contains('w-vulcan-v2-button')) {
-                const span = targetElement.querySelector('span');
-                if (span && span.textContent.toLowerCase().includes('skip')) {
-                    AttendanceRecorded();
-                }
-            }
-        });
+        //     // Now check if the targetElement is the button
+        //     if (targetElement.classList.contains('w-vulcan-v2-button')) {
+        //         const span = targetElement.querySelector('span');
+        //         if (span && span.textContent.toLowerCase().includes('skip')) {
+        //             AttendanceRecorded();
+        //         }
+        //     }
+        // });
 
-        function AttendanceRecorded() {
-            const email = getEmailFromURL();
-            if (!email) {
-                console.log('Email parameter is missing in the URL.');
-                return;
-            }
+        // function AttendanceRecorded() {
+        //     const email = getEmailFromURL();
+        //     if (!email) {
+        //         console.log('Email parameter is missing in the URL.');
+        //         return;
+        //     }
 
 
-            const url = `https://462dg3vi3e42y7tudtwmtdh5nu0rnpus.lambda-url.ap-south-1.on.aws/?wemail=${email}&categ=8904`;
+        //     const url = `https://7defxhh6t3vjashcxhfrxuamem0gnmnf.lambda-url.ap-south-1.on.aws/?wemail=${email}&categ=9788`;
 
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                        offerRedeemed = false;
-                    }
-                    return response.text(); // Expecting plain text response
-                })
-                .then(data => {
-                    if (data === 'success') {
-                        offerRedeemed = true;
-                        console.log("Attendence recorded");
-                    } else {
-                        offerRedeemed = false;
-                        throw new Error('Unexpected response data');
-                    }
-                })
-                .catch(error => {
-                    alert('An error occurred. Please try again later.');
-                    offerRedeemed = false;
-                });
-        }
-
+        //     fetch(url)
+        //         .then(response => {
+        //             if (!response.ok) {
+        //                 throw new Error('Network response was not ok');
+        //                 offerRedeemed = false;
+        //             }
+        //             return response.text(); // Expecting plain text response
+        //         })
+        //         .then(data => {
+        //             if (data === 'success') {
+        //                 offerRedeemed = true;
+        //                 console.log("Attendence recorded");
+        //             } else {
+        //                 offerRedeemed = false;
+        //                 throw new Error('Unexpected response data');
+        //             }
+        //         })
+        //         .catch(error => {
+        //             alert('An error occurred. Please try again later.');
+        //             offerRedeemed = false;
+        //         });
+        // }
 
     </script>
 </body>
