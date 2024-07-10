@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://msocialverse.com/wp-content/uploads/2024/03/cropped-FavIcon-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://msocialverse.com/wp-content/uploads/2024/03/cropped-FavIcon-192x192.png" sizes="192x192">
+    <title>mSocial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    
+    
+    
+        <!-- Meta Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '292050040019482');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=292050040019482&ev=PageView&noscript=1"
+            /></noscript>
+        <!-- End Meta Pixel Code -->
+    
+    
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w,d,s,l,i){
+                w[l]=w[l]||[];
+                w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;
+                j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-54VPDHKB');
+        </script>
+        <!-- End Google Tag Manager -->
+        
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-379Q58LDV5"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-379Q58LDV5');
+        </script>
+            
+    
+    
+    
+    
+    
+    
+    <style>
+        body, html {
+            margin: 0;
+            border:none;
+            background-color: #000;
+        }
+        .bg
+        {
+            position: fixed;
+            width:100%;
+            height:100%;
+            background-image: url(images/bg.jpg);
+            background-size: cover;       /* Ensures the image covers the entire area without distortion */
+            background-position: center;  /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            left:0px;
+            top:0px;
+            z-index:0;
+        }
+
+        .leftbg{
+            position: fixed;
+            width:100%;
+            height:100%;
+            background-image: url(images/controller.png);
+            background-size:contain;       /* Ensures the image covers the entire area without distortion */
+            background-position: center;  /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            left:-40%;
+            bottom:-35%;
+            z-index:1;
+            transform: rotate(10deg);
+        }
+        .rightbg{
+            position: fixed;
+            width:100%;
+            height:100%;
+            background-image: url(images/chair.png);
+            background-size: contain;       /* Ensures the image covers the entire area without distortion */
+            background-position: center;  /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            right:-32%;
+            bottom:-40%;
+            z-index:1;
+        }
+        .container {
+            position: relative;
+            min-width: 50%;
+            width:800px;
+            max-width:95%;
+            height:100%;
+            /* background:red; */
+            left:50%;
+            transform: translateX(-50%);
+            z-index:2;
+        }
+        .section {
+            position: relative;
+            width:100%;
+            height:auto;
+            padding:5px;
+            /* background-color: yellow;
+            border:1px solid black; */
+            box-sizing: border-box;
+        }
+        .video-wrapper {
+            left: 50%;
+            width: 70%;
+            transform: translateX(-50%);
+            border:1px solid #FD9E26;
+            background: #FD9E26;
+            border-radius:25px;
+            box-sizing: border-box;
+            /* background:yellow; */
+        }
+        .logo
+        {
+            position: relative;
+            padding-top:55px;
+            left: 50%;
+            width:22%;
+            max-width: 400px;
+            min-width:200px;
+            transform: translateX(-50%);
+            /* background:green; */
+        }
+        .logo img
+        {
+            width:100%;
+            height:auto;
+        }
+        .tag-line
+        {
+            width:100%;
+            height:auto;
+            color:white;
+            font-family:  "Poppins", sans-serif;
+            font-size: clamp(6.2vh, 7.2vw, 6.4vh);
+            font-weight:bold;
+            text-align: center;
+            padding:10px;
+            padding-top:10px;;
+        }
+        
+        .sub-tag-line
+        {
+            width:100%;
+            height:auto;
+            color:white;
+            font-family:  "Poppins", sans-serif;
+            font-size: clamp(3.2vh, 4.2vw, 3.2vh);
+            text-align: center;
+            padding:20px;
+            padding-top:5px;
+            font-weight: 250;
+        }
+        .hint-line
+        {
+            width:100%;
+            height:auto;
+            left: 50%;
+            color:white;
+            font-family:  "Poppins", sans-serif;
+            font-size: clamp(2vh, 3vw, 2.5vh);
+            font-weight:400;
+            text-align: center;
+            transform: translateX(-50%);
+            padding-bottom:60px;
+            display:none;
+        }
+        .button-wrapper
+        {
+            padding-top:40px;
+        }
+        .button-wrapper button {
+            position: relative;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border:none;
+            color:white;
+            font-size: clamp(2.5vh, 3.5vw, 2.8vh);
+            font-family:  "Poppins", sans-serif;
+            font-weight:bold;
+            border-radius: 10px;
+            background:linear-gradient(to right, #C41B19, #FD9F26);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .button-wrapper button:hover {
+            background-color: rgba(0, 156, 34, 0.877);
+        }
+        /* Media queries for different screen sizes */
+        @media (max-width: 768px) {
+            .tag-line {
+                font-size: clamp(5vh, 5.7vw, 5.1vh);
+            }
+            .sub-tag-line
+            {
+                font-size: clamp(2.6vh, 3.6vw, 2.6vh);
+            }
+            .hint-line {
+                font-size: clamp(1.5vh, 2.5vw, 2vh);
+            }
+            .button-wrapper button {
+                font-size: clamp(2.5vh, 3.5vw, 2.8vh);
+            }
+            
+            .logo
+            {
+                padding-top:20px;
+            }
+
+            .leftbg{
+                width:100%;
+                height:100%;
+                left:-45%;
+                bottom:-40%;
+                transform: rotate(30deg);
+            }
+            .rightbg{
+                width:120%;
+                height:120%;
+                right:-37%;
+                bottom:-55%;
+            }
+            
+            .video-wrapper {
+                width: 95%;
+            }
+        }
+    </style>
+
+<script>
+    function getEmailFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('invitee_email');
+    }
+
+    function GotoForm()
+    {
+        var email = getCookie("email");
+        if(!email)
+        {
+            email = getEmailFromURL();
+        }
+        if (watchedPercentage > 75)
+        {
+            window.location.href = `https://info.msocialverse.com/Form.html?invitee_email=${email}`;
+        }
+        else
+        {
+            const message = document.querySelector('.hint-line');
+            message.style.display = 'block';
+        }
+
+    }
+
+</script>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54VPDHKB"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- bgeffects -->
+    <div class="bg"></div>
+    <div class="leftbg"></div>
+    <div class="rightbg"></div>
+
+    <div class="container">
+        <div class="logo section">
+            <img src="images/logo.png">
+        </div>
+
+        <div class="tag-line section">Call Booked &#128077; <span style="background: linear-gradient(to right, #e04d13, #d48a28); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></span></div>
+        
+        <div class="sub-tag-line section">Let's Understand your <b>Business</b> better.</div>
+
+
+        <div class="video-wrapper section">
+            <script src="https://fast.wistia.com/embed/medias/bq72xaor9b.jsonp" async></script>
+            <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+            <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                    <div class="wistia_embed wistia_async_bq72xaor9b seo=true videoFoam=true" style="height:100%;position:relative;width:100%">
+                        <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                            <img src="https://fast.wistia.com/embed/medias/bq72xaor9b/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" />
+            </div></div></div></div>
+        </div>
+        <div class="button-wrapper section">
+            <button onclick="GotoForm()">Continue</button>
+        </div>
+        <div class="hint-line section">Please watch the full video to continue</div>
+        
+        
+    </div>
+
+    
+    <script>
+        var watchedPercentage = 0;
+        var offerRedeemed = false;
+        function trackVideoProgress(video) {
+            const parts = 30;
+            const updateFrequency = 1; // Check every second
+            const cookieName = 'video2Progress';
+            
+            // Initialize or retrieve the watched parts from the cookie
+            let watchedParts = getCookie(cookieName) || '0'.repeat(parts);
+            watchedPercentage = calculateWatchedPercentage(watchedParts);
+            console.log(watchedPercentage);
+
+            video.addEventListener('timeupdate', function() {
+                const currentTime = video.currentTime;
+                const duration = video.duration;
+                const partLength = duration / parts;
+                const partIndex = Math.floor(currentTime / partLength);
+                
+                if (watchedParts[partIndex] === '0') {
+                    watchedParts = setCharAt(watchedParts, partIndex, '1');
+                    setCookie(cookieName, watchedParts, 365); // Store the updated cookie for 1 year
+                    watchedPercentage = calculateWatchedPercentage(watchedParts);
+                    console.log(watchedPercentage);
+                }
+
+            });
+
+            video.addEventListener('ended', function() {
+                console.log('Video ended! You watched ' + calculateWatchedPercentage(watchedParts) + '% of the video.');
+            });
+
+            function calculateWatchedPercentage(partsString) {
+                const watchedCount = partsString.split('').filter(char => char === '1').length;
+                return (watchedCount / parts) * 100;
+            }
+
+            function setCharAt(str, index, chr) {
+                if (index > str.length - 1) return str;
+                return str.substring(0, index) + chr + str.substring(index + 1);
+            }
+
+           
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = `expires=${d.toUTCString()}`;
+            document.cookie = `${name}=${value}; ${expires}; path=/`;
+        }
+
+        // Function to continuously check for the video element
+        function checkForVideo() {
+            const video = document.querySelector('video');
+            if (video) {
+                trackVideoProgress(video);
+                var tmpEmail = getEmailFromURL();
+                if(tmpEmail)
+                {
+                    setCookie("email",tmpEmail,365);
+                }
+
+            } else {
+                setTimeout(checkForVideo, 500); // Check again after 500ms
+            }
+        }
+
+        // Start checking for the video element
+        checkForVideo();
+
+    </script>
+</body>
+</html>
